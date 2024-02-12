@@ -3,9 +3,9 @@
 def substrings(string, dictionary)
   # p dictionary
   words = string.split(' ')
-  dictionary.each_with_object(Hash.new(0)) do |substring, acc|
+  dictionary.each_with_object(Hash.new(0)) do |substring, substrings_hash|
     words.each do |word|
-      acc[substring] += 1 if word.downcase.match?(substring)
+      substrings_hash[substring] += 1 if word.downcase.match?(substring)
     end
   end
 end
